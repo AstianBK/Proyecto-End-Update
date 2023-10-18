@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "expansion:block/respawn_end" },
+    "facing=east": { "model": "expansion:block/respawn_end", "y": 90 },
+    "facing=south": { "model": "expansion:block/respawn_end", "y": 180 },
+    "facing=west": { "model": "expansion:block/respawn_end", "y": 270 }
+  }
+}

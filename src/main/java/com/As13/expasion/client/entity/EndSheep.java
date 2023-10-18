@@ -47,7 +47,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class EndSheep extends EndAnimals implements Shearable, net.minecraftforge.common.IForgeShearable {
-    private static final int EAT_ANIMATION_TICKS = 40;
     private static final EntityDataAccessor<Byte> DATA_WOOL_ID = SynchedEntityData.defineId(EndSheep.class, EntityDataSerializers.BYTE);
     private static final Map<DyeColor, ItemLike> ITEM_BY_DYE = Util.make(Maps.newEnumMap(DyeColor.class), (p_29841_) -> {
         p_29841_.put(DyeColor.MAGENTA, Blocks.MAGENTA_WOOL);
@@ -62,10 +61,12 @@ public class EndSheep extends EndAnimals implements Shearable, net.minecraftforg
         return p_29868_;
     }, EndSheep::createSheepColor)));
     private int eatAnimationTick;
+    private int ateTick;
     private EatBlockGoal eatBlockGoal;
 
     public EndSheep(EntityType<? extends EndAnimals> p_27557_, Level p_27558_) {
         super(p_27557_, p_27558_);
+        this.ateTick=0;
     }
 
     private static float[] createSheepColor(DyeColor p_29866_) {
@@ -103,6 +104,9 @@ public class EndSheep extends EndAnimals implements Shearable, net.minecraftforg
     public void aiStep() {
         if (this.level.isClientSide) {
             this.eatAnimationTick = Math.max(0, this.eatAnimationTick - 1);
+        }
+        if(this.ateTick--==0){
+            this.setSheared(false);
         }
 
         super.aiStep();
@@ -268,8 +272,10 @@ public class EndSheep extends EndAnimals implements Shearable, net.minecraftforg
         byte b0 = this.entityData.get(DATA_WOOL_ID);
         if (p_29879_) {
             this.entityData.set(DATA_WOOL_ID, (byte)(b0 | 16));
+            this.ateTick=400;
         } else {
             this.entityData.set(DATA_WOOL_ID, (byte)(b0 & -17));
+            this.ateTick=0;
         }
 
     }
@@ -312,8 +318,8 @@ public class EndSheep extends EndAnimals implements Shearable, net.minecraftforg
     }
 
     private DyeColor getOffspringColor(Animal p_29824_, Animal p_29825_) {
-        DyeColor dyecolor = ((Sheep)p_29824_).getColor();
-        DyeColor dyecolor1 = ((Sheep)p_29825_).getColor();
+        DyeColor dyecolor = ((EndSheep)p_29824_).getColor();
+        DyeColor dyecolor1 = ((EndSheep)p_29825_).getColor();
         CraftingContainer craftingcontainer = makeContainer(dyecolor, dyecolor1);
         return this.level.getRecipeManager().getRecipeFor(RecipeType.CRAFTING, craftingcontainer, this.level).map((p_29828_) -> {
             return p_29828_.assemble(craftingcontainer);

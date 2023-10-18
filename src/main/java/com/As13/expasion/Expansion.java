@@ -3,6 +3,7 @@ package com.As13.expasion;
 import com.As13.expasion.client.renderers.EndCowRenderer;
 import com.As13.expasion.client.renderers.EndPigRenderer;
 import com.As13.expasion.client.renderers.EndSheepRenderer;
+import com.As13.expasion.register.BKBlocks;
 import com.As13.expasion.register.BkEntityTypes;
 import com.As13.expasion.register.BkEffect;
 import com.As13.expasion.register.BkItems;
@@ -38,10 +39,10 @@ public class Expansion {
         BkEntityTypes.register(modEventBus);
         BkEffect.EFFECT.register(modEventBus);
         BkItems.ITEMS.register(modEventBus);
+        BKBlocks.register(modEventBus);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT,()->()->{
             modEventBus.addListener(this::registerRender);
         });
-
 
         MinecraftForge.EVENT_BUS.register(this);
     }
