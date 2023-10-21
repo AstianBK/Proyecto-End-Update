@@ -1,7 +1,7 @@
 package com.As13.expansion.mixin;
 
 import com.As13.expansion.Expansion;
-import com.As13.expasion.block.RespawnEndBlock;
+import com.As13.expansion.block.RespawnEndBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;

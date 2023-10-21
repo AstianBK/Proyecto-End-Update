@@ -1,6 +1,6 @@
-package com.As13.expasion.item;
+package com.As13.expansion.item;
 
-import com.As13.expasion.register.BkEffect;
+import com.As13.expansion.register.BkEffect;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;

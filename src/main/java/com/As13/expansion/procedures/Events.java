@@ -1,8 +1,7 @@
 package com.As13.expansion.procedures;
 
-import com.As13.expasion.register.BkEffect;
+import com.As13.expansion.register.BkEffect;
 import net.minecraftforge.event.entity.EntityTeleportEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 

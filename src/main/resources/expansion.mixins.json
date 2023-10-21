@@ -1,15 +1,11 @@
 {
   "required": true,
-  "package": "com.As13.expasion.mixin",
+  "package": "com.As13.expansion.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
-  "refmap": "expansion.refmap.json",
   "mixins": [
     "PlayerMixins",
     "ClientPacketListenerMixin",
     "ServerPlayerMixins"
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  }
+  ]
 }
