@@ -6,7 +6,7 @@ license="All rights reserved"
 
 modId="expansion"
 version="${file.jarVersion}"
-displayName="Expasion"
+displayName="Expansion"
 logoFile="Expasionmod.png"
 credits="Thanks for this example mod goes to Java"
 authors="Love, Cheese and small house plants"
