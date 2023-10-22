@@ -4,22 +4,22 @@ license="All rights reserved"
 
 [[mods]]
 
-modId="expansion"
+modId="endtropy"
 version="${file.jarVersion}"
-displayName="Expansion"
-logoFile="Expasionmod.png"
+displayName="Endtropy"
+logoFile="Endtropy.png"
 credits="Thanks for this example mod goes to Java"
 authors="Love, Cheese and small house plants"
 
 description='''
 '''
-[[dependencies.expansion]]
+[[dependencies.endtropy]]
     modId="forge"
     mandatory=true
     versionRange="[43,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.expansion]]
+[[dependencies.endtropy]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.19.2,1.20)"
