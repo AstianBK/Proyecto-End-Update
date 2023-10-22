@@ -2,7 +2,7 @@ package com.As13.endtropy.mixin;
 
 import com.As13.endtropy.Endtropy;
 import com.As13.endtropy.api.IEnchantedProtectionVoid;
-import com.As13.endtropy.block.RespawnEndBlock;
+import com.As13.endtropy.block.EndAnchorBlock;
 import com.As13.endtropy.register.BKBlocks;
 import com.As13.endtropy.register.BKEnchantment;
 import com.As13.endtropy.register.BkItems;
