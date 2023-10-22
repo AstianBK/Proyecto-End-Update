@@ -1,7 +1,7 @@
 package com.As13.endtropy.register;
 
 import com.As13.endtropy.Endtropy;
-import com.As13.endtropy.block.RespawnEndBlock;
+import com.As13.endtropy.block.EndAnchorBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -18,8 +18,8 @@ import java.util.function.Supplier;
 public class BKBlocks {
     public static final DeferredRegister<Block> BLOCK = DeferredRegister.create(ForgeRegistries.BLOCKS, Endtropy.MODID);
 
-    public static final RegistryObject<Block> RESPAWN_END = registerBlock("respawn_end",
-            ()->new RespawnEndBlock(BlockBehaviour.Properties.of(Material.STONE))
+    public static final RegistryObject<Block> END_ANCHOR = registerBlock("end_anchor",
+            ()->new EndAnchorBlock(BlockBehaviour.Properties.of(Material.STONE))
             ,CreativeModeTab.TAB_DECORATIONS);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){

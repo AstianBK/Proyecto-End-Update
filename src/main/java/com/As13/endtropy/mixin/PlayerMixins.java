@@ -1,7 +1,7 @@
 package com.As13.endtropy.mixin;
 
 import com.As13.endtropy.Endtropy;
-import com.As13.endtropy.block.RespawnEndBlock;
+import com.As13.endtropy.block.EndAnchorBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
@@ -28,10 +28,10 @@ public abstract class PlayerMixins{
             return;
         }
 
-        if (block instanceof RespawnEndBlock && RespawnEndBlock.canSetSpawn(world)) {
-            Optional<Vec3> optional = RespawnEndBlock.findStandUpPosition(EntityType.PLAYER, world, pos);
+        if (block instanceof EndAnchorBlock && EndAnchorBlock.canSetSpawn(world)) {
+            Optional<Vec3> optional = EndAnchorBlock.findStandUpPosition(EntityType.PLAYER, world, pos);
             if (!bl2 && optional.isPresent()) {
-                world.setBlock(pos, blockState.setValue(RespawnEndBlock.CHARGE, blockState.getValue(RespawnEndBlock.CHARGE) - 1), Block.UPDATE_ALL);
+                world.setBlock(pos, blockState.setValue(EndAnchorBlock.CHARGE, blockState.getValue(EndAnchorBlock.CHARGE) - 1), Block.UPDATE_ALL);
             }
 
             cir.setReturnValue(optional);

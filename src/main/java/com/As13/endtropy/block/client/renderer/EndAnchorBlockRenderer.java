@@ -1,6 +1,6 @@
 package com.As13.endtropy.block.client.renderer;
 
-import com.As13.endtropy.block.RespawnEndBlockEntity;
+import com.As13.endtropy.block.EndAnchorBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Matrix4f;
@@ -10,18 +10,18 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.TheEndPortalRenderer;
 import net.minecraft.core.Direction;
 
-public class RespawnEndBlockRenderer extends TheEndPortalRenderer<RespawnEndBlockEntity>{
+public class EndAnchorBlockRenderer extends TheEndPortalRenderer<EndAnchorBlockEntity>{
 
-    public RespawnEndBlockRenderer(BlockEntityRendererProvider.Context p_173689_) {
+    public EndAnchorBlockRenderer(BlockEntityRendererProvider.Context p_173689_) {
         super(p_173689_);
     }
 
-    public void render(RespawnEndBlockEntity p_112650_, float p_112651_, PoseStack p_112652_, MultiBufferSource p_112653_, int p_112654_, int p_112655_) {
+    public void render(EndAnchorBlockEntity p_112650_, float p_112651_, PoseStack p_112652_, MultiBufferSource p_112653_, int p_112654_, int p_112655_) {
         Matrix4f matrix4f = p_112652_.last().pose();
         this.renderCube(p_112650_, matrix4f, p_112653_.getBuffer(this.renderType()));
     }
 
-    private void renderCube(RespawnEndBlockEntity p_173691_, Matrix4f p_173692_, VertexConsumer p_173693_) {
+    private void renderCube(EndAnchorBlockEntity p_173691_, Matrix4f p_173692_, VertexConsumer p_173693_) {
         float f = this.getOffsetDown();
         float f1 = this.getOffsetUp();
         this.renderFace(p_173691_, p_173692_, p_173693_, 0.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, Direction.SOUTH);
@@ -32,7 +32,7 @@ public class RespawnEndBlockRenderer extends TheEndPortalRenderer<RespawnEndBloc
         this.renderFace(p_173691_, p_173692_, p_173693_, 0.0F, 1.0F, f1, f1, 1.0F, 1.0F, 0.0F, 0.0F, Direction.UP);
     }
 
-    private void renderFace(RespawnEndBlockEntity p_173695_, Matrix4f p_173696_, VertexConsumer p_173697_, float p_173698_, float p_173699_, float p_173700_, float p_173701_, float p_173702_, float p_173703_, float p_173704_, float p_173705_, Direction p_173706_) {
+    private void renderFace(EndAnchorBlockEntity p_173695_, Matrix4f p_173696_, VertexConsumer p_173697_, float p_173698_, float p_173699_, float p_173700_, float p_173701_, float p_173702_, float p_173703_, float p_173704_, float p_173705_, Direction p_173706_) {
         if (p_173695_.shouldRenderFace(p_173706_)) {
             p_173697_.vertex(p_173696_, p_173698_, p_173700_, p_173702_).endVertex();
             p_173697_.vertex(p_173696_, p_173699_, p_173700_, p_173703_).endVertex();

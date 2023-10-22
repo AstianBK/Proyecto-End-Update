@@ -1,0 +1,11 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"bottom": "minecraft:block/end_stone_bricks",
+		"north": "endtropy:block/end_anchor_1",
+		"west": "endtropy:block/end_anchor_0",
+		"east": "endtropy:block/end_anchor_0",
+		"south": "endtropy:block/end_anchor_0",
+		"top": "endtropy:block/end_anchor_portal_frame"
+	}
+}

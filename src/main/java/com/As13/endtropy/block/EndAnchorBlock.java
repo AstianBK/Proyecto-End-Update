@@ -39,12 +39,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class RespawnEndBlock extends Block implements EntityBlock {
+public class EndAnchorBlock extends Block implements EntityBlock {
     public static final IntegerProperty CHARGE = BlockStateProperties.RESPAWN_ANCHOR_CHARGES;
     private static final ImmutableList<Vec3i> RESPAWN_HORIZONTAL_OFFSETS = ImmutableList.of(new Vec3i(0, 0, -1), new Vec3i(-1, 0, 0), new Vec3i(0, 0, 1), new Vec3i(1, 0, 0), new Vec3i(-1, 0, -1), new Vec3i(1, 0, -1), new Vec3i(-1, 0, 1), new Vec3i(1, 0, 1));
     private static final ImmutableList<Vec3i> RESPAWN_OFFSETS = (new ImmutableList.Builder<Vec3i>()).addAll(RESPAWN_HORIZONTAL_OFFSETS).addAll(RESPAWN_HORIZONTAL_OFFSETS.stream().map(Vec3i::below).iterator()).addAll(RESPAWN_HORIZONTAL_OFFSETS.stream().map(Vec3i::above).iterator()).add(new Vec3i(0, 1, 0)).build();
 
-    public RespawnEndBlock(BlockBehaviour.Properties p_55838_) {
+    public EndAnchorBlock(BlockBehaviour.Properties p_55838_) {
         super(p_55838_);
         this.registerDefaultState(this.stateDefinition.any().setValue(CHARGE, Integer.valueOf(0)));
     }
@@ -190,6 +190,6 @@ public class RespawnEndBlock extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
-        return new RespawnEndBlockEntity(p_153215_,p_153216_);
+        return new EndAnchorBlockEntity(p_153215_,p_153216_);
     }
 }

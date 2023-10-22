@@ -1,6 +1,6 @@
 package com.As13.endtropy;
 
-import com.As13.endtropy.block.client.renderer.RespawnEndBlockRenderer;
+import com.As13.endtropy.block.client.renderer.EndAnchorBlockRenderer;
 import com.As13.endtropy.client.renderers.EndCowRenderer;
 import com.As13.endtropy.client.renderers.EndPigRenderer;
 import com.As13.endtropy.client.renderers.EndSheepRenderer;
@@ -40,7 +40,7 @@ public class Endtropy {
     }
     @OnlyIn(Dist.CLIENT)
     public  void registerRendererBlockEntity(FMLCommonSetupEvent event){
-        BlockEntityRenderers.register(BkBlockEntityTypes.RESPAWN_END.get(), RespawnEndBlockRenderer::new);
+        BlockEntityRenderers.register(BkBlockEntityTypes.END_ANCHOR.get(), EndAnchorBlockRenderer::new);
     }
 
     @OnlyIn(Dist.CLIENT)

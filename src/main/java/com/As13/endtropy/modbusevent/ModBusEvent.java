@@ -1,23 +1,17 @@
 package com.As13.endtropy.modbusevent;
 
 import com.As13.endtropy.Endtropy;
-import com.As13.endtropy.block.RespawnEndBlockEntity;
-import com.As13.endtropy.block.client.renderer.RespawnEndBlockRenderer;
+import com.As13.endtropy.block.EndAnchorBlockEntity;
 import com.As13.endtropy.client.entity.EndAnimals;
 import com.As13.endtropy.client.entity.EndCow;
 import com.As13.endtropy.client.entity.EndPig;
 import com.As13.endtropy.client.entity.EndSheep;
 import com.As13.endtropy.client.models.EndSheepFurModel;
 import com.As13.endtropy.client.models.EndSheepModel;
-import com.As13.endtropy.register.BKBlocks;
-import com.As13.endtropy.register.BkBlockEntityTypes;
 import com.As13.endtropy.register.BkEntityTypes;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.blockentity.TheEndPortalRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
