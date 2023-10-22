@@ -31,6 +31,7 @@ public class Endtropy {
         BkEffect.EFFECT.register(modEventBus);
         BkItems.ITEMS.register(modEventBus);
         BKBlocks.register(modEventBus);
+        BKEnchantment.REGISTRY.register(modEventBus);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT,()->()->{
             modEventBus.addListener(this::registerRender);
             modEventBus.addListener(this::registerRendererBlockEntity);
