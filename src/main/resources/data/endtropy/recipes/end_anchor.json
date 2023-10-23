@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "EWE",
+    "QQQ"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass"
+    },
+    "E": {
+      "item": "minecraft:end_stone"
+    },
+    "W": {
+      "item": "minecraft:end_crystal"
+    },
+    "Q": {
+      "item": "minecraft:end_stone_bricks"
+    }
+  },
+  "result": {
+    "item": "endtropy:end_anchor",
+    "count": 1
+  }
+}

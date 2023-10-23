@@ -6,6 +6,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,7 +20,8 @@ public class BKBlocks {
     public static final DeferredRegister<Block> BLOCK = DeferredRegister.create(ForgeRegistries.BLOCKS, Endtropy.MODID);
 
     public static final RegistryObject<Block> END_ANCHOR = registerBlock("end_anchor",
-            ()->new EndAnchorBlock(BlockBehaviour.Properties.of(Material.STONE))
+            ()->new EndAnchorBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).sound(SoundType.GLASS))
             ,CreativeModeTab.TAB_DECORATIONS);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
