@@ -7,6 +7,6 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
 public class ProtectionVoidEnchantment extends Enchantment {
     public ProtectionVoidEnchantment() {
-        super(Rarity.UNCOMMON,EnchantmentCategory.ARMOR,EquipmentSlot.values());
+        super(Rarity.UNCOMMON,EnchantmentCategory.WEARABLE,EquipmentSlot.values());
     }
 }
