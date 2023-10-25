@@ -22,19 +22,19 @@ public class BkEntityTypes {
     public static final RegistryObject<EntityType<EndPig>> END_PIG =
             ENTITY_TYPES.register("end_pig",
                     () -> EntityType.Builder.of(EndPig::new, MobCategory.MONSTER)
-                            .sized(0.60f, 1.0f)
+                            .sized(0.9f, 0.9f)
                             .build(new ResourceLocation(Endtropy.MODID, "end_pig").toString()));
 
     public static final RegistryObject<EntityType<EndCow>> END_COW =
             ENTITY_TYPES.register("end_cow",
                     () -> EntityType.Builder.of(EndCow::new, MobCategory.MONSTER)
-                            .sized(0.60f, 1.0f)
+                            .sized(0.9f, 1.4f)
                             .build(new ResourceLocation(Endtropy.MODID, "end_cow").toString()));
 
     public static final RegistryObject<EntityType<EndSheep>> END_SHEEP =
             ENTITY_TYPES.register("end_sheep",
                     () -> EntityType.Builder.of(EndSheep::new, MobCategory.MONSTER)
-                            .sized(0.60f, 1.0f)
+                            .sized(0.9f, 1.3f)
                             .build(new ResourceLocation(Endtropy.MODID, "end_sheep").toString()));
 
     public static final RegistryObject<EntityType<EnderThorn>> ENDERTHORN =
