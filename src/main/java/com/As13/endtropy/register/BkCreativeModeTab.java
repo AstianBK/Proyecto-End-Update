@@ -17,7 +17,7 @@ public class BkCreativeModeTab {
 
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(Items.SHEEP_SPAWN_EGG);
+            return new ItemStack(BkItems.PILK.get());
         }
 
         @Override
@@ -29,7 +29,7 @@ public class BkCreativeModeTab {
     };
 
     public static void PreOrdenInit(){
-        List<Item> itemList= Arrays.asList(Items.SHEEP_SPAWN_EGG);
+        List<Item> itemList= Arrays.asList(BkItems.PILK.get(),BkItems.ENDERTHORN_SPAWN_EGG.get(),BkItems.WARPED_THORN.get());
 
         stackComparator= Ordering.explicit(itemList).onResultOf(ItemStack::getItem);
     }

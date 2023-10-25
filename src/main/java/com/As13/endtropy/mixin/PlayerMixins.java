@@ -60,10 +60,10 @@ public abstract class PlayerMixins extends LivingEntity implements IEnchantedPro
             Endtropy.respawnAfterCredits = false;
             return;
         }
-        if (block instanceof EndAnchorBlock && EndAnchorBlock .canSetSpawn(world)) {
+        if (block instanceof EndAnchorBlock && blockState.getValue(EndAnchorBlock.CHARGE)>0 && EndAnchorBlock.canSetSpawn(world)) {
             Optional<Vec3> optional = EndAnchorBlock .findStandUpPosition(EntityType.PLAYER, world, pos);
             if (!bl2 && optional.isPresent()) {
-                world.setBlock(pos, blockState.setValue(EndAnchorBlock .CHARGE, blockState.getValue(EndAnchorBlock .CHARGE) - 1), Block.UPDATE_ALL);
+                world.setBlock(pos, blockState.setValue(EndAnchorBlock.CHARGE, blockState.getValue(EndAnchorBlock.CHARGE) - 1), Block.UPDATE_ALL);
             }
             cir.setReturnValue(optional);
         }

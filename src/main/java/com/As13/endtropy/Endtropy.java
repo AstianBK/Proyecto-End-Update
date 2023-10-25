@@ -1,11 +1,11 @@
 package com.As13.endtropy;
 
 import com.As13.endtropy.block.client.renderer.EndAnchorBlockRenderer;
-import com.As13.endtropy.client.renderers.EndCowRenderer;
-import com.As13.endtropy.client.renderers.EndPigRenderer;
-import com.As13.endtropy.client.renderers.EndSheepRenderer;
+import com.As13.endtropy.client.projectile.WarpedThornProjectile;
+import com.As13.endtropy.client.renderers.*;
 import com.As13.endtropy.register.*;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -49,6 +49,8 @@ public class Endtropy {
         EntityRenderers.register(BkEntityTypes.END_COW.get(), EndCowRenderer::new);
         EntityRenderers.register(BkEntityTypes.END_PIG.get(), EndPigRenderer::new);
         EntityRenderers.register(BkEntityTypes.END_SHEEP.get(), EndSheepRenderer::new);
+        EntityRenderers.register(BkEntityTypes.ENDERTHORN.get(), EnderThornRenderer::new);
+        EntityRenderers.register(BkEntityTypes.WARPED_THORN.get(), WarpedThornRenderer::new);
     }
 
 }

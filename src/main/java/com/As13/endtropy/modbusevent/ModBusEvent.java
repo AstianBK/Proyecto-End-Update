@@ -1,11 +1,7 @@
 package com.As13.endtropy.modbusevent;
 
 import com.As13.endtropy.Endtropy;
-import com.As13.endtropy.block.EndAnchorBlockEntity;
-import com.As13.endtropy.client.entity.EndAnimals;
-import com.As13.endtropy.client.entity.EndCow;
-import com.As13.endtropy.client.entity.EndPig;
-import com.As13.endtropy.client.entity.EndSheep;
+import com.As13.endtropy.client.entity.*;
 import com.As13.endtropy.client.models.EndSheepFurModel;
 import com.As13.endtropy.client.models.EndSheepModel;
 import com.As13.endtropy.register.BkEntityTypes;
@@ -51,6 +47,7 @@ public class ModBusEvent {
         event.put(BkEntityTypes.END_COW.get(), EndCow.createAttributes().build());
         event.put(BkEntityTypes.END_PIG.get(), EndPig.createAttributes().build());
         event.put(BkEntityTypes.END_SHEEP.get(), EndSheep.createAttributes().build());
+        event.put(BkEntityTypes.ENDERTHORN.get(), EnderThorn.createAttributes().build());
     }
 
     @SubscribeEvent

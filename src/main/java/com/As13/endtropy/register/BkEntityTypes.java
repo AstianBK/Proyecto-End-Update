@@ -4,6 +4,8 @@ import com.As13.endtropy.Endtropy;
 import com.As13.endtropy.client.entity.EndCow;
 import com.As13.endtropy.client.entity.EndPig;
 import com.As13.endtropy.client.entity.EndSheep;
+import com.As13.endtropy.client.entity.EnderThorn;
+import com.As13.endtropy.client.projectile.WarpedThornProjectile;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -34,6 +36,16 @@ public class BkEntityTypes {
                     () -> EntityType.Builder.of(EndSheep::new, MobCategory.MONSTER)
                             .sized(0.60f, 1.0f)
                             .build(new ResourceLocation(Endtropy.MODID, "end_sheep").toString()));
+
+    public static final RegistryObject<EntityType<EnderThorn>> ENDERTHORN =
+            ENTITY_TYPES.register("enderthorn",
+                    () -> EntityType.Builder.of(EnderThorn::new, MobCategory.MONSTER)
+                            .sized(2.0f, 1.5f)
+                            .build(new ResourceLocation(Endtropy.MODID, "enderthorn").toString()));
+
+    public static final RegistryObject<EntityType<WarpedThornProjectile>> WARPED_THORN = ENTITY_TYPES
+            .register("warped_thorn", () -> EntityType.Builder.<WarpedThornProjectile>of(WarpedThornProjectile::new, MobCategory.MISC)
+                    .fireImmune().sized(0.2F, 0.2F).build(Endtropy.MODID + "warped_thorn"));
 
 
     public static void register(IEventBus eventBus) {

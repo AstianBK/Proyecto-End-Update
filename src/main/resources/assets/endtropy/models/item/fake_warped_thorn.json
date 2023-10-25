@@ -1,0 +1,19 @@
+{
+  "parent": "item/handheld",
+  "loader": "forge:separate-perspective",
+
+  "textures": {
+    "layer0": "endtropy:item/fake_warped_thorn_gui"
+  },
+  "base": {
+    "parent": "endtropy:item/fake_warped_thorn_handheld"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "endtropy:item/fake_warped_thorn_gui"
+    },
+    "fixed": {
+      "parent": "endtropy:item/fake_warped_thorn_gui"
+    }
+  }
+}
