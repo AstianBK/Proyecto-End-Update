@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
@@ -45,11 +46,12 @@ public class EnderThorn extends Monster implements IAnimatable {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.25D)
-                .add(Attributes.ATTACK_DAMAGE,5.0D)
-                .add(Attributes.ARMOR,3.0D)
-                .add(Attributes.FOLLOW_RANGE,20.0D);
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 45.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.16D)
+                .add(Attributes.ATTACK_DAMAGE,8.0D)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0.4D)
+                .add(Attributes.ARMOR,7.0D)
+                .add(Attributes.FOLLOW_RANGE,45.0D);
     }
     protected void registerGoals() {
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true, false));
@@ -102,7 +104,8 @@ public class EnderThorn extends Monster implements IAnimatable {
             thorn.shootFromRotation(this,this.getXRot(),this.yBodyRot-10.0F+10.0F*i,0.0F,1.0F,0.1f);
             this.level.addFreshEntity(thorn);
         }
-        this.playSound(SoundEvents.PLAYER_HURT_SWEET_BERRY_BUSH,1.0F,+3.0F);
+        this.playSound(SoundEvents.PLAYER_HURT_SWEET_BERRY_BUSH,1.0F,-3.0F);
+
     }
 
     private boolean canThrow() {
@@ -207,11 +210,13 @@ public class EnderThorn extends Monster implements IAnimatable {
             double d0 = this.getAttackReachSqr(entity)+2.0D;
             if (distance <= d0 && this.getTicksUntilNextAttack() <= 0) {
                 this.resetAttackCooldown();
-                this.enderThorn.playSound(SoundEvents.STRAY_HURT, 1.0F, -1.0F);
+                this.enderThorn.playSound(SoundEvents.ENDERMAN_SCREAM, 1.0F, -3.0F);
                 this.enderThorn.swing(InteractionHand.MAIN_HAND);
                 this.enderThorn.doHurtTarget(entity);
             }
         }
+
+
 
         @Override
         public void stop() {

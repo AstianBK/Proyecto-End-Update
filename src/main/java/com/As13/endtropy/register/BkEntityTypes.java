@@ -40,7 +40,7 @@ public class BkEntityTypes {
     public static final RegistryObject<EntityType<EnderThorn>> ENDERTHORN =
             ENTITY_TYPES.register("enderthorn",
                     () -> EntityType.Builder.of(EnderThorn::new, MobCategory.MONSTER)
-                            .sized(2.0f, 1.5f)
+                            .sized(0.9f, 5.0f)
                             .build(new ResourceLocation(Endtropy.MODID, "enderthorn").toString()));
 
     public static final RegistryObject<EntityType<WarpedThornProjectile>> WARPED_THORN = ENTITY_TYPES
